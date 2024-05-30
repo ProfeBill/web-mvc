@@ -8,14 +8,15 @@ from flask import render_template
 import sys
 sys.path.append("src")
 
+# IMportamos el modulo donde esta creado nuestro Blueprint
 from view_web import vista_usuarios 
 
 # Flask constructor: crea una variable que nos servirá para comunicarle a Flask
 # la configuración que queremos para nuestra aplicación
 app = Flask(__name__)     
 
+# Registramos los Blueprints que creamos 
 app.register_blueprint( vista_usuarios.blueprint )
-
 
 # Esta linea permite que nuestra aplicación se ejecute individualmente
 if __name__=='__main__':
